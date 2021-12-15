@@ -1,0 +1,1085 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Your Kubernetes Testing Friend">
+      
+      
+        <meta name="author" content="Kubeshop testkube Team">
+      
+      
+      <link rel="icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+    
+    
+      
+        <title>Getting Started - TestKube</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7951f6f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-204665550-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TestKube" class="md-header__button md-logo" aria-label="TestKube" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TestKube
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kubeshop/testkube/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kubeshop/testkube
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TestKube" class="md-nav__button md-logo" aria-label="TestKube" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    TestKube
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kubeshop/testkube/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kubeshop/testkube
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Getting Started
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    Getting help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-tests" class="md-nav__link">
+    Defining tests
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-postman-collections-based-tests" class="md-nav__link">
+    Creating Postman Collections based tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-cypress-tests" class="md-nav__link">
+    Creating Cypress tests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-new-script-execution" class="md-nav__link">
+    Starting new script execution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-execution-details" class="md-nav__link">
+    Getting execution details
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-available-scripts" class="md-nav__link">
+    Getting available scripts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-available-executions" class="md-nav__link">
+    Getting available executions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-output-format" class="md-nav__link">
+    Changing output format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-a-script" class="md-nav__link">
+    Deleting a script
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Managing test scripts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Managing test scripts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Managing test scripts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts-creating/" class="md-nav__link">
+        Creating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts-running/" class="md-nav__link">
+        Running
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts-getting-results/" class="md-nav__link">
+        Getting results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executor-postman/" class="md-nav__link">
+        Postman Collections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executor-cypress/" class="md-nav__link">
+        Cypress Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executor-curl/" class="md-nav__link">
+        Curl Commands
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Executors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Executors" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Executors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executor-custom/" class="md-nav__link">
+        Creating custom executor
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          CLI Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CLI Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          CLI Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/testkube/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/testkube_install/" class="md-nav__link">
+        Install Cmd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/testkube_scripts/" class="md-nav__link">
+        Scripts Cmd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/testkube_dashboard/" class="md-nav__link">
+        Dashboard Cmd
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testkube-automation/" class="md-nav__link">
+        Integrating with CI/CD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metrics/" class="md-nav__link">
+        Metrics
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        Architecture
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
+        Development
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openapi/" class="md-nav__link">
+        OpenAPI definition
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../telemetry/" class="md-nav__link">
+        Telemetry
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artifacts-storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    Getting help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-tests" class="md-nav__link">
+    Defining tests
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-postman-collections-based-tests" class="md-nav__link">
+    Creating Postman Collections based tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-cypress-tests" class="md-nav__link">
+    Creating Cypress tests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-new-script-execution" class="md-nav__link">
+    Starting new script execution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-execution-details" class="md-nav__link">
+    Getting execution details
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-available-scripts" class="md-nav__link">
+    Getting available scripts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-available-executions" class="md-nav__link">
+    Getting available executions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-output-format" class="md-nav__link">
+    Changing output format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-a-script" class="md-nav__link">
+    Deleting a script
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/kubeshop/testkube/blob/main/docs/getting-started.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="getting-started">Getting Started</h1>
+<p>Please follow <a href="/docs/installing.md">install steps</a> first for TestKube installation (if not installed already)</p>
+<h2 id="getting-help">Getting help</h2>
+<div class="highlight"><pre><span></span><code>kubectl testkube --help 
+
+<span class="c1"># or for scripts runs</span>
+kubectl testkube scripts --help 
+</code></pre></div>
+<h2 id="defining-tests">Defining tests</h2>
+<p>After installing you will need to add Test Scripts to your cluster, scripts are created as Custom Resource in Kubernetes
+(access to Kubernetes cluster would be also needed)</p>
+<p>For now TestKube only supports  <em>Postman collections</em>, <em>basic CURL execition</em> and <em>Cypress</em> - but we plan to handle more testing tools soon,.</p>
+<p>If you don't want to create Custom Resources "by hand" we have a little helper for this: </p>
+<h3 id="creating-postman-collections-based-tests">Creating Postman Collections based tests</h3>
+<p>Fist let's create Postman collection:</p>
+<div class="highlight"><pre><span></span><code>cat <span class="s">&lt;&lt;EOF &gt; my_postman_collection.json</span>
+<span class="s">{</span>
+<span class="s">    &quot;info&quot;: {</span>
+<span class="s">        &quot;_postman_id&quot;: &quot;8af42c21-3e31-49c1-8b27-d6e60623a180&quot;,</span>
+<span class="s">        &quot;name&quot;: &quot;Kubeshop&quot;,</span>
+<span class="s">        &quot;schema&quot;: &quot;https://schema.getpostman.com/json/collection/v2.1.0/collection.json&quot;</span>
+<span class="s">    },</span>
+<span class="s">    &quot;item&quot;: [</span>
+<span class="s">        {</span>
+<span class="s">            &quot;name&quot;: &quot;Home&quot;,</span>
+<span class="s">            &quot;event&quot;: [</span>
+<span class="s">                {</span>
+<span class="s">                    &quot;listen&quot;: &quot;test&quot;,</span>
+<span class="s">                    &quot;script&quot;: {</span>
+<span class="s">                        &quot;exec&quot;: [</span>
+<span class="s">                            &quot;pm.test(\&quot;Body matches string\&quot;, function () {&quot;,</span>
+<span class="s">                            &quot;    pm.expect(pm.response.text()).to.include(\&quot;K8s Accelerator\&quot;);&quot;,</span>
+<span class="s">                            &quot;});&quot;</span>
+<span class="s">                        ],</span>
+<span class="s">                        &quot;type&quot;: &quot;text/javascript&quot;</span>
+<span class="s">                    }</span>
+<span class="s">                }</span>
+<span class="s">            ],</span>
+<span class="s">            &quot;request&quot;: {</span>
+<span class="s">                &quot;method&quot;: &quot;GET&quot;,</span>
+<span class="s">                &quot;header&quot;: [],</span>
+<span class="s">                &quot;url&quot;: {</span>
+<span class="s">                    &quot;raw&quot;: &quot;https://kubeshop.io/&quot;,</span>
+<span class="s">                    &quot;protocol&quot;: &quot;https&quot;,</span>
+<span class="s">                    &quot;host&quot;: [</span>
+<span class="s">                        &quot;kubeshop&quot;,</span>
+<span class="s">                        &quot;io&quot;</span>
+<span class="s">                    ],</span>
+<span class="s">                    &quot;path&quot;: [</span>
+<span class="s">                        &quot;&quot;</span>
+<span class="s">                    ]</span>
+<span class="s">                }</span>
+<span class="s">            },</span>
+<span class="s">            &quot;response&quot;: []</span>
+<span class="s">        },</span>
+<span class="s">        {</span>
+<span class="s">            &quot;name&quot;: &quot;Team&quot;,</span>
+<span class="s">            &quot;event&quot;: [</span>
+<span class="s">                {</span>
+<span class="s">                    &quot;listen&quot;: &quot;test&quot;,</span>
+<span class="s">                    &quot;script&quot;: {</span>
+<span class="s">                        &quot;exec&quot;: [</span>
+<span class="s">                            &quot;pm.test(\&quot;Status code is 200\&quot;, function () {&quot;,</span>
+<span class="s">                            &quot;    pm.response.to.have.status(200);&quot;,</span>
+<span class="s">                            &quot;});&quot;</span>
+<span class="s">                        ],</span>
+<span class="s">                        &quot;type&quot;: &quot;text/javascript&quot;</span>
+<span class="s">                    }</span>
+<span class="s">                }</span>
+<span class="s">            ],</span>
+<span class="s">            &quot;request&quot;: {</span>
+<span class="s">                &quot;method&quot;: &quot;GET&quot;,</span>
+<span class="s">                &quot;header&quot;: [],</span>
+<span class="s">                &quot;url&quot;: {</span>
+<span class="s">                    &quot;raw&quot;: &quot;https://kubeshop.io/our-team&quot;,</span>
+<span class="s">                    &quot;protocol&quot;: &quot;https&quot;,</span>
+<span class="s">                    &quot;host&quot;: [</span>
+<span class="s">                        &quot;kubeshop&quot;,</span>
+<span class="s">                        &quot;io&quot;</span>
+<span class="s">                    ],</span>
+<span class="s">                    &quot;path&quot;: [</span>
+<span class="s">                        &quot;our-team&quot;</span>
+<span class="s">                    ]</span>
+<span class="s">                }</span>
+<span class="s">            },</span>
+<span class="s">            &quot;response&quot;: []</span>
+<span class="s">        }</span>
+<span class="s">    ]</span>
+<span class="s">}</span>
+
+<span class="s">EOF</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>kubectl testkube scripts create --file my_postman_collection.json --type <span class="s2">&quot;postman/collection&quot;</span> --name my-test-name 
+</code></pre></div>
+<p><strong>Note</strong>: this is just an example of how it works. For further details you can visit <a href="../executor-postman/">Postman documentation</a></p>
+<h3 id="creating-cypress-tests">Creating Cypress tests</h3>
+<p>Cypress tests are little more complicated to pass - for now we're supporting Git based paths for Cypress projects.</p>
+<p>You can create new test with kubectl testkube plugin:</p>
+<div class="highlight"><pre><span></span><code> kubectl testkube scripts create --uri https://github.com/kubeshop/testkube-executor-cypress.git --git-branch jacek/feature/git-checkout --git-path examples --name test-name --type cypress/project
+</code></pre></div>
+<p>Where:</p>
+<ul>
+<li><code>uri</code> is git uri where testkube will get cypress project</li>
+<li><code>git-branch</code> is what branch should he checkout (default - main branch will be used)</li>
+<li><code>git-path</code> is what path of repository should be checked out (testkube is doing partial git checkout so it'll be fast even for very big monorepos)</li>
+<li><code>name</code> - is unique Sript Custom Resource name.</li>
+<li><code>type</code> - cypress/project - for Cypress based project test structure</li>
+</ul>
+<p>For now we're supporting only Cypress test runs, but we plan to fully integrate it.</p>
+<h2 id="starting-new-script-execution">Starting new script execution</h2>
+<p>When our script is defined as CR we can now run it:</p>
+<div class="highlight"><pre><span></span><code>kubectl testkube scripts start my-test-name 
+
+... some script run data ...
+
+Use following <span class="nb">command</span> to get script execution details:
+kubectl testkube scripts execution 611b6da38cd74034e7c9d408
+
+or watch <span class="k">for</span> completition with
+kubectl testkube scripts watch 611b6da38cd74034e7c9d408
+</code></pre></div>
+<h2 id="getting-execution-details">Getting execution details</h2>
+<p>After script completed with success or error you can go back to script details by running
+scripts execution command:</p>
+<div class="highlight"><pre><span></span><code>kubectl testkube scripts execution 6103a45b7e18c4ea04883866
+
+....
+some execution details
+</code></pre></div>
+<h2 id="getting-available-scripts">Getting available scripts</h2>
+<p>To run script execution you'll need to know script name</p>
+<div class="highlight"><pre><span></span><code>kubectl testkube scripts list
+
++----------------------+--------------------+
+<span class="p">|</span>         NAME         <span class="p">|</span>        TYPE        <span class="p">|</span>
++----------------------+--------------------+
+<span class="p">|</span> create-001-test      <span class="p">|</span> postman/collection <span class="p">|</span>
+<span class="p">|</span> envs1                <span class="p">|</span> postman/collection <span class="p">|</span>
+<span class="p">|</span> test-kubeshop        <span class="p">|</span> postman/collection <span class="p">|</span>
+<span class="p">|</span> test-kubeshop-failed <span class="p">|</span> postman/collection <span class="p">|</span>
+<span class="p">|</span> test-postman-script  <span class="p">|</span> postman/collection <span class="p">|</span>
++----------------------+--------------------+
+</code></pre></div>
+<h2 id="getting-available-executions">Getting available executions</h2>
+<div class="highlight"><pre><span></span><code>kubectl testkube scripts executions SCRIPT_NAME
+
++------------+--------------------+--------------------------+---------------------------+----------+
+<span class="p">|</span>   SCRIPT   <span class="p">|</span>        TYPE        <span class="p">|</span>       EXECUTION ID       <span class="p">|</span>      EXECUTION NAME       <span class="p">|</span> STATUS   <span class="p">|</span>
++------------+--------------------+--------------------------+---------------------------+----------+
+<span class="p">|</span> parms-test <span class="p">|</span> postman/collection <span class="p">|</span> 611a5a1a910ca385751eb2c6 <span class="p">|</span> pt1                       <span class="p">|</span> success  <span class="p">|</span>
+<span class="p">|</span> parms-test <span class="p">|</span> postman/collection <span class="p">|</span> 611a5a40910ca385751eb2c8 <span class="p">|</span> pt2                       <span class="p">|</span> error    <span class="p">|</span>
+<span class="p">|</span> parms-test <span class="p">|</span> postman/collection <span class="p">|</span> 611a5b6d910ca385751eb2ca <span class="p">|</span> forcibly-frank-panda      <span class="p">|</span> error    <span class="p">|</span>
+<span class="p">|</span> parms-test <span class="p">|</span> postman/collection <span class="p">|</span> 611a5b83910ca385751eb2cc <span class="p">|</span> slightly-merry-jennet     <span class="p">|</span> error    <span class="p">|</span>
+<span class="p">|</span> parms-test <span class="p">|</span> postman/collection <span class="p">|</span> 611b6d6c8cd74034e7c9d406 <span class="p">|</span> frequently-expert-terrier <span class="p">|</span> error    <span class="p">|</span>
+<span class="p">|</span> parms-test <span class="p">|</span> postman/collection <span class="p">|</span> 611b6da38cd74034e7c9d408 <span class="p">|</span> violently-fresh-elephant  <span class="p">|</span> error    <span class="p">|</span>
++------------+--------------------+--------------------------+---------------------------+----------+
+</code></pre></div>
+<h2 id="changing-output-format">Changing output format</h2>
+<p>For lists and details you can use different output format (<code>--output</code> flag) for now we're supporting following formats:</p>
+<ul>
+<li>RAW - it's raw output from given executor (e.g. for Postman collection it's terminal text with colors and tables)</li>
+<li>JSON - test run data are encoded in JSON</li>
+<li>GO - go-template formatting (like in Docker and Kubernetes) you'll need to add <code>--go-template</code> flag with custom format (defaults to {{ . | printf("%+v") }} will help you check available fields)</li>
+</ul>
+<p>(Keep in mind that we have plans for other output formats like junit etc.)</p>
+<h2 id="deleting-a-script">Deleting a script</h2>
+<p>For deleting a script there is <code>kubectl testkube scripts delete SCRIPT_NAME</code> command and also <code>--all</code> flag can be used to delete all.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../installing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Installation
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../scripts-creating/" class="md-footer__link md-footer__link--next" aria-label="Next: Creating" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Creating
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 <a href="https://kubeshop.io">Kubeshop</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.649a939e.min.js"></script>
+      
+    
+  </body>
+</html>
